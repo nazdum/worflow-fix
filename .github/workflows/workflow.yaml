@@ -16,12 +16,9 @@ jobs:
         run: |
           PROJECTPATH=pwd
           export PYTHONPATH=$PROJECTPATH
-          echo $PYTHONPATH
-      - name: export tests folder to PYTHONPATH
-        run: |
           cd test-folder
           TESTSPATH=pwd
           export PYTHONPATH=$PYTHONPATH:$TESTSPATH
-      - name: get current PYTHONPATH
-        run: echo $PYTHONPATH
+          echo este es el PYTHONPATH, $PYTHONPATH
+
       
