@@ -14,10 +14,10 @@ jobs:
           fetch-depth: 0
       - name: export root folder to PYTHONPATH
         run: |
-          PROJECTPATH=pwd
+          PROJECTPATH= pwd
           export PYTHONPATH=$PROJECTPATH
           cd test-folder
-          TESTSPATH=pwd
+          TESTSPATH= pwd
           export PYTHONPATH=$PYTHONPATH:$TESTSPATH
           echo este es el PYTHONPATH, $PYTHONPATH
 
