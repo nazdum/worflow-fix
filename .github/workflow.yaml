@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - "main"
+
+
+jobs:
+  Env-setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3.3.0
+        with:
+          fetch-depth: 0
+      - name: export PYTHONPATH
+      - run: |
+          echo $PYTHONPATH
+          pwd
+          projectpath= pwd
+          export PYTHONPATH=$projectpath
+          echo $PYTHONPATH
+
+      
