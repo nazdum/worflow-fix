@@ -12,12 +12,16 @@ jobs:
         uses: actions/checkout@v3.3.0
         with:
           fetch-depth: 0
-      - name: export PYTHONPATH
+      - name: export root folder to PYTHONPATH
         run: |
+          PROJECTPATH=pwd
+          export PYTHONPATH=$PROJECTPATH
           echo $PYTHONPATH
-          pwd
-          projectpath= pwd
-          export PYTHONPATH=$projectpath
-          echo $PYTHONPATH
-
+      - name: export tests folder to PYTHONPATH
+        run: |
+          cd test-folder
+          TESTSPATH=pwd
+          export PYTHONPATH=$PYTHONPATH:$TESTSPATH
+      - name: get current PYTHONPATH
+        run: echo $PYTHONPATH
       
